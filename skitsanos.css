@@ -108,7 +108,8 @@ h6 code {
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 3.5em;
+    font-weight: 100 !important;
     line-height: 1.2;
     border-bottom: 1px solid #eee;
     text-transform: uppercase;
@@ -276,7 +277,7 @@ tt {
     border: 1px solid #e7eaed;
     background-color: #f8f8f8;
     border-radius: 3px;
-    padding: 2px 4px 0px 4px;
+    padding: 2px 4px 0 4px;
     font-size: 0.9em;
 }
 
@@ -358,7 +359,7 @@ code {
 .md-image > .md-meta {
     /*border: 1px solid #ddd;*/
     border-radius: 3px;
-    padding: 2px 0px 0px 4px;
+    padding: 2px 0 0 4px;
     font-size: 0.9em;
     color: inherit;
 }
@@ -442,30 +443,35 @@ header, .context-menu, .megamenu-content, footer {
  * Task list
  */
 
-
-.md-task-list-item {
-    padding-left: 1.6rem;
-}
-
 .md-task-list-item > input:before {
-    content: '\2714';
-    display: inline-block;
+    content: ' \2714 ';
+    font-size: 1.5rem;
     width: 1.6rem;
     height: 1.6rem;
+    display: inline-block;
     vertical-align: middle;
     text-align: center;
     color: #ddd;
-    background-color: #fefefe;
+    margin-top: -0.6rem;
+    background-color: #ffffff;
 }
 
 .md-task-list-item > input:checked:before,
-.md-task-list-item > input[checked]:before{
+.md-task-list-item > input[checked]:before {
     color: #56309a;
 }
 
 .task-list-done {
     /* styles for completed tasks */
     text-decoration: line-through;
+}
+
+.task-list-not-done > :before,
+.task-list-done > :before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
 }
 
 .task-list-not-done {
